@@ -1,12 +1,17 @@
 import AnimationContainer from "@/components/ui/global/animation-container";
 import Animationyx from "@/components/ui/global/animationyas";
 import { CustomButton } from "@/components/ui/global/custom-button";
-import Image from "next/image";
+import Header from "@/components/ui/global/Header";
+import MainCarousel from "../components/landing-page/Main-carousel";
+import BusinessVision from "../components/landing-page/BusinessVision";
+import Challenges from "../components/landing-page/Challenges";
+import Experties from "@/components/landing-page/Experties";
+import HoverCard from "@/components/landing-page/StakeHolder";
 
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col py-20 justify-center  items-center gap-2">
+      {/* <div className="flex flex-col py-20 justify-center  items-center gap-2">
         <Animationyx delay={0.1} direction="left">
           <CustomButton href="/">Book a Call</CustomButton>
         </Animationyx>
@@ -18,7 +23,14 @@ export default function Home() {
 
         <p className="text-primary">This is dummy</p>
         <p className="text-secondary">This is dummy</p>
-      </div>
+      </div> */}
+      <Header/>
+      <MainCarousel/>
+      <BusinessVision/>
+      <Challenges/>
+      <HoverCard/>
+      <Experties/>
+
     </main>
   );
 }
