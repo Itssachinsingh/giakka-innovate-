@@ -1,12 +1,9 @@
 'use client'
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { CustomButton } from "../ui/global/custom-button";
 
 const MainCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef(null);
-
   const slides = [
     {
       id: 1,
@@ -28,15 +25,14 @@ const MainCarousel = () => {
     }
   ];
 
-  // Create a much larger array for truly infinite scrolling
   const createInfiniteSlides = () => {
-    const repeats = 40; // Create 20 copies for smooth infinite scroll
+    const repeats = 40;
     const infiniteSlides = [];
     for (let i = 0; i < repeats; i++) {
       slides.forEach((slide, index) => {
         infiniteSlides.push({
           ...slide,
-          uniqueId: `${slide.id}-${i}-${index}`, // Unique ID for each instance
+          uniqueId: `${slide.id}-${i}-${index}`,
           originalIndex: index,
           copyIndex: i
         });
@@ -46,36 +42,56 @@ const MainCarousel = () => {
   };
 
   const infiniteSlides = createInfiniteSlides();
+  
+  // Initialize currentIndex at the middle position to avoid initial transition
+  const [currentIndex, setCurrentIndex] = useState(() => Math.floor(infiniteSlides.length / 2));
+  const intervalRef = useRef(null);
+  const isTransitioningRef = useRef(false);
+  const timeoutRef = useRef(null);
 
-  useEffect(() => {
-    // Start from a middle position to allow smooth infinite scrolling
-    setCurrentIndex(Math.floor(infiniteSlides.length / 2));
-  }, [infiniteSlides.length]);
-
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex(prev => {
-        const next = prev + 1;
-        // When we reach near the end, smoothly continue (no reset needed)
-        if (next >= infiniteSlides.length - 10) {
-          // Smoothly jump to middle again, but this happens so rarely it's not noticeable
-          return Math.floor(infiniteSlides.length / 3);
-        }
-        return next;
-      });
-    }, 3000);
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [infiniteSlides.length]);
-
-  const goToSlide = (targetIndex) => {
+  // Cleanup function to clear all timers
+  const clearAllTimers = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
+      intervalRef.current = null;
     }
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  // Start auto-advance with proper cleanup
+  const startAutoAdvance = useCallback(() => {
+    clearAllTimers();
+    
+    intervalRef.current = setInterval(() => {
+      // Only advance if not currently transitioning
+      if (!isTransitioningRef.current) {
+        setCurrentIndex(prev => {
+          const next = prev + 1;
+          if (next >= infiniteSlides.length - 10) {
+            return Math.floor(infiniteSlides.length / 3);
+          }
+          return next;
+        });
+      }
+    }, 3000);
+  }, [infiniteSlides.length]);
+
+  useEffect(() => {
+    startAutoAdvance();
+    return clearAllTimers;
+  }, [startAutoAdvance, clearAllTimers]);
+
+  const goToSlide = useCallback((targetIndex) => {
+    // Prevent multiple rapid clicks
+    if (isTransitioningRef.current) {
+      return;
+    }
+
+    isTransitioningRef.current = true;
+    clearAllTimers();
 
     // Find the closest instance of the target slide
     const currentPos = currentIndex;
@@ -92,21 +108,23 @@ const MainCarousel = () => {
       }
     });
 
-    setCurrentIndex(closestIndex);
+    if (closestIndex !== -1) {
+      setCurrentIndex(closestIndex);
+    }
 
-    // Restart auto-advance
-    setTimeout(() => {
-      intervalRef.current = setInterval(() => {
-        setCurrentIndex(prev => {
-          const next = prev + 1;
-          if (next >= infiniteSlides.length - 10) {
-            return Math.floor(infiniteSlides.length / 3);
-          }
-          return next;
-        });
-      }, 3000);
-    }, 3000);
-  };
+    // Use a single timeout to handle the transition completion and restart
+    timeoutRef.current = setTimeout(() => {
+      isTransitioningRef.current = false;
+      startAutoAdvance();
+    }, 1200); // Slightly longer than CSS transition duration
+
+  }, [currentIndex, infiniteSlides, startAutoAdvance, clearAllTimers]);
+
+  // Debounced version of goToSlide to prevent rapid clicking
+  const debouncedGoToSlide = useCallback(
+    debounce(goToSlide, 200),
+    [goToSlide]
+  );
 
   // Get slide styling based on relative position
   const getSlideStyle = (index) => {
@@ -116,19 +134,19 @@ const MainCarousel = () => {
       return {
         width: '360px',
         height: '220px',
-        className: " overflow-hidden rounded border-4 border-white shadow-2xl"
+        className: " overflow-hidden rounded border-[3px] border-white shadow-2xl"
       };
     } else if (relativePosition === 1) {
       return {
         width: '240px',
         height: '160px',
-        className: " overflow-hidden rounded shadow-lg"
+        className: " overflow-hidden rounded border-none shadow-lg"
       };
     } else if (relativePosition === 2) {
       return {
         width: '240px',
         height: '160px',
-        className: " overflow-hidden rounded shadow-md"
+        className: " overflow-hidden rounded border-none shadow-md"
       };
     } else {
       return {
@@ -139,7 +157,6 @@ const MainCarousel = () => {
     }
   };
 
-  // Get current slide for background/text
   const getCurrentSlide = () => {
     const currentSlide = infiniteSlides[currentIndex];
     return currentSlide ? slides[currentSlide.originalIndex] : slides[0];
@@ -162,22 +179,19 @@ const MainCarousel = () => {
               height={250}
               src={slide.backgroundImage}
               alt=""
-              className="w-[100%] h-full object-cover "
-              
+              className="w-[100%] h-full object-cover"
             />
- <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
-  </div>
-
-
-))}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
+          </div>
+        ))}
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center py-32">
-        <div className="mx-auto w-full ">
-          <div className="flex items-end justify-between min-h-[70vh]">
+        <div className="mx-auto w-full">
+          <div className="flex flex-col lg:flex-row items-end justify-between min-h-[70vh]">
             {/* Left Content - Text */}
-            <div className="w-1/2 text-white pr-8 px-20">
+            <div className="sm:w-[80%] w-[90%] lg:w-1/2  text-white pr-8 px-4 sm:px-6 lg:px-20">
               <div className="relative h-auto min-h-[400px] overflow-hidden">
                 {slides.map((slide, index) => (
                   <div
@@ -201,7 +215,7 @@ const MainCarousel = () => {
             </div>
 
             {/* Right Content - Infinite Slider */}
-            <div className="w-[60%] flex justify-center items-center">
+            <div className="w-[90%] lg:w-[60%] flex justify-center items-center">
               <div className="relative w-full h-96 overflow-hidden pl-8">
                 <div
                   className="flex items-center h-full transition-transform duration-1000 ease-in-out"
@@ -218,7 +232,7 @@ const MainCarousel = () => {
                         className="flex-shrink-0"
                         style={{ width: '350px' }}
                       >
-                        <div className="flex items-center justify-end  h-full ">
+                        <div className="flex items-center justify-end h-full">
                           <div className="relative mr-6">
                             <div
                               className={`${slideStyle.className} transition-all duration-1000 ease-in-out`}
@@ -249,14 +263,15 @@ const MainCarousel = () => {
                 </div>
 
                 {/* Navigation Dots */}
-                <div className="absolute bottom-0 left-[10%] transform -translate-x-1/2 flex justify-center space-x-3 z-20">
+                <div className="absolute bottom-0 left-1/2 md:left-[15%] xl:left-[10%] transform -translate-x-1/2 flex justify-center space-x-3 z-20">
                   {slides.map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-12 h-3  transition-all duration-300 ${index === (infiniteSlides[currentIndex]?.originalIndex || 0)
+                      onClick={() => debouncedGoToSlide(index)}
+                      disabled={isTransitioningRef.current}
+                      className={`w-12 h-3 transition-all duration-300 disabled:cursor-not-allowed ${index === (infiniteSlides[currentIndex]?.originalIndex || 0)
                         ? 'bg-white'
-                        : 'bg-transparent border border-white/60 hover:border-white'
+                        : 'bg-white/30 border border-white/60 hover:border-white'
                         }`}
                     />
                   ))}
@@ -269,5 +284,18 @@ const MainCarousel = () => {
     </div>
   );
 };
+
+// Simple debounce utility function
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
 
 export default MainCarousel;

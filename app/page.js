@@ -7,6 +7,14 @@ import BusinessVision from "../components/landing-page/BusinessVision";
 import Challenges from "../components/landing-page/Challenges";
 import Experties from "@/components/landing-page/Experties";
 import HoverCard from "@/components/landing-page/StakeHolder";
+import Growth from "@/components/landing-page/Growth";
+import Choose from "@/components/landing-page/Choose";
+import Process from "@/components/landing-page/Process";
+import { CaseStudy } from "@/components/landing-page/CaseStudy";
+import Insights from "@/components/landing-page/Insights";
+import Book from "@/components/landing-page/Book";
+import Faq from "@/components/landing-page/Faq";
+import Footer from "@/components/landing-page/Footer";
 
 export default function Home() {
   return (
@@ -24,13 +32,20 @@ export default function Home() {
         <p className="text-primary">This is dummy</p>
         <p className="text-secondary">This is dummy</p>
       </div> */}
-      <Header/>
-      <MainCarousel/>
-      <BusinessVision/>
-      <Challenges/>
-      <HoverCard/>
-      <Experties/>
-
+   
+      <MainCarousel />
+      <BusinessVision />
+      <Challenges />
+      <Experties />
+      <HoverCard />
+      <Growth />
+      <Choose/>
+      <Process/>
+      <CaseStudy/>
+      <Insights/>
+      <Book/>
+      <Faq/>
+ 
     </main>
   );
 }

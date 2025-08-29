@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Header from "@/components/ui/global/Header";
+import Footer from "@/components/landing-page/Footer";
 const satoshi = localFont({
   src: "../public/fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${satoshi.variable} antialiased`}>
+   <Header />
         {children}
+             <Footer/>
       </body>
     </html>
   );

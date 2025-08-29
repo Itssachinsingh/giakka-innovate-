@@ -15,27 +15,39 @@ const HoverCard = () => {
 
 
     return (
-        <div className="px-10 flex justify-evenly items-center flex-wrap gap-5  my-30">
-            {stakeHolders.map((item, index) => (
-                <div className="relative w-[300px] h-[400px] overflow-hidden group mb-10" key={index}>
-                    {/* Background Image */}
-                    <Image
-                        fill
-                        src={item.img}
-                        alt="Card"
-                        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 "
-                    />
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0  group-hover:bg-black/40 transition-colors duration-500"></div>
-                    {/* Bottom Text Box */}
-                    <div className="absolute rounded-lg left-3 bottom-3  w-[90%]  h-[66px] backdrop-blur-3xl text-white p-3 transition-all duration-500 group-hover:w-full group-hover:right-0 group-hover:left-0 group-hover:bottom-0 group-hover:h-[118px] group-hover:rounded-none flex flex-col  items-center justify-center">
-                        <span className="transition-all duration-500 text-[21px] text-center mt-5 font-bold">
-                            {item.title}
-                        </span>
-                        <p className=" cursor-pointer group-hover:opacity-100 opacity-0 text-md mt-1 text-primary transition-all duration-500">Learn More</p>
+        <div className="px-4 sm:px-6 lg:px-20 mx-auto">
+            <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>OUR STAKEHOLDERS</span>—</h2>
+            <h1 className='lg:text-[64px] text-3xl sm:text-4xl md:text-5xl font-bold mb-4'>PARTNERING WITH LEADERS WHO <br /> SHAPE THE FUTURE OF INNOVATION </h1>
+            <div className=" flex justify-center lg:justify-between items-center  flex-wrap gap-2 sm:gap-6 md:gap-10 lg:gap-5  my-20">
+                {stakeHolders.map((item, index) => (
+                    <div className="relative w-[300px] h-[400px] overflow-hidden group mb-12" key={index}>
+                        {/* Background Image */}
+                        <Image
+                            fill
+                            src={item.img}
+                            alt="Card"
+                            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 "
+                        />
+                        {/* Dark overlay */}
+                        <div className="absolute inset-0  group-hover:bg-black/40 transition-colors duration-500"></div>
+                        {/* Bottom Text Box */}
+                        <div className="absolute rounded-lg left-3 bottom-3  w-[90%]  h-[66px] backdrop-blur-3xl text-white p-3 transition-all duration-500 group-hover:w-full group-hover:right-0 group-hover:left-0 group-hover:bottom-0 group-hover:h-[118px] group-hover:rounded-none flex flex-col  items-center justify-center">
+                            <span className="transition-all duration-500 text-[21px] text-center mt-5 font-bold">
+                                {item.title}
+                            </span>
+                            <p className=" cursor-pointer group-hover:opacity-100 opacity-0 text-md mt-1 text-primary transition-all duration-500">Learn More</p>
+                        </div>
                     </div>
+                ))}
+            </div>
+            <div className="bg-[#DBEDFF] flex mb-10  gap-10 lg:gap-20  items-stretch">
+                <div className="w-5 py-4 bg-[#0575E6]"></div>
+                <div className="py-7 ">
+                    <p className="text-[22px]">
+                        From innovation labs to policy halls, from startup garages to corporate boardrooms, we're the strategic partner that transforms potential into performance.
+                    </p>
                 </div>
-            ))}
+            </div>
         </div>
     );
 };

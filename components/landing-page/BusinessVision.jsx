@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
+import { CustomButton } from "../ui/global/custom-button";
 const BusinessVision = () => {
   return (
     <section className="py-10 sm:py-14 lg:py-20 px-4 sm:px-6 lg:px-20 mx-auto">
@@ -20,9 +19,9 @@ const BusinessVision = () => {
           />
 
           {/* Overlay Card */}
-          <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-auto right-6 sm:right-6 bg-black/60 backdrop-blur-sm text-white p-4 sm:p-6 rounded-lg max-w-[80%] sm:max-w-xs">
+          <div className="absolute bottom-4 sm:bottom-6  right-6 sm:right-6 bg-black/60 backdrop-blur-sm text-white p-4 sm:p-6 rounded-lg max-w-[40%] sm:max-w-[40%]">
             <div className="space-y-2">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400">5+</div>
+              <div className="text-2xl sm:text-3xl md:text-[84px] font-bold text-green-400">5+</div>
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                 Years more of business consulting experiences
               </p>
@@ -32,8 +31,8 @@ const BusinessVision = () => {
 
         {/* Right Column - Content */}
         <div className="flex flex-col justify-center w-full space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-bold tracking-tight">
-            <span className="text-secondary">BUSINESS</span>{" "}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-bold tracking-tight text-end mt-[-1rem] sm:mt-0">
+            <span className="text-secondary ">BUSINESS</span>{" "}
             <span className="text-business-dark">VISION</span>
           </h1>
 
@@ -46,12 +45,11 @@ const BusinessVision = () => {
             impactful partnerships, and influence policy.
           </p>
 
-          <Button
-            size="lg"
-            className="bg-secondary w-fit hover:bg-secondary/90 text-white font-semibold px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base tracking-wide rounded-none"
-          >
+          <CustomButton href="#" variant="primary" target="_blank">
             EXPLORE MORE
-          </Button>
+          </CustomButton>
+
+
         </div>
       </div>
     </section>
