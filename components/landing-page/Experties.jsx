@@ -54,7 +54,7 @@ export default function ExpandingCard() {
         <div className="my-30">
         <div className="text-center">
                   <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>OUR EXPERTIES </span>—</h2>
-      <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl mt-3 sm:mt-0 font-bold mb-10'>SOLUTIOS FOR EVERY STAGE</h1>
+      <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl mt-5 sm:mt-3 font-bold mb-10'>SOLUTIOS FOR EVERY STAGE</h1>
         </div>
             <div className="mx-auto px-10 flex flex-wrap justify-evenly gap-8">
 

@@ -12,11 +12,11 @@ const Insights = () => {
 
     return (
         <div className="px-4 sm:px-6 lg:px-20 mx-auto my-10">
-            <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>INSIGHTS</span>—</h2>
+            <h2 className="text-[20px] font-bold text-secondary text-center sm:text-start">—<span className='mx-3'>INSIGHTS</span>—</h2>
 
             <div className='flex flex-col sm:flex-row justify-between items-center mb-5'>
                 <div>
-                    <h1 className='lg:text-[84px] mt-10 lg:mt-3 text-3xl sm:text-4xl md:text-5xl font-bold mb-4'>SEE THE LATEST UPDATES</h1>
+                    <h1 className='lg:text-[84px] mt-10 lg:mt-3 text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center sm:text-start '>SEE THE LATEST UPDATES</h1>
                 </div>
                 <CustomButton href="#" variant="primary" target="_blank">
                     VIEW MORE

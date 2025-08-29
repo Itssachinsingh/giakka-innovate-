@@ -31,7 +31,7 @@ const Challenges = () => {
   };
 
   const infiniteStats = createInfiniteStats();
-  
+
   // Initialize at middle position to avoid initial jump
   const [currentIndex, setCurrentIndex] = useState(() => Math.floor(infiniteStats.length / 2));
 
@@ -72,7 +72,7 @@ const Challenges = () => {
   const nextSlide = useCallback(() => {
     clearAllTimers();
     startTransition();
-    
+
     setCurrentIndex(prev => {
       const next = prev + 1;
       if (next >= infiniteStats.length - 10) {
@@ -89,7 +89,7 @@ const Challenges = () => {
   const prevSlide = useCallback(() => {
     clearAllTimers();
     startTransition();
-    
+
     setCurrentIndex(prev => {
       const prev_index = prev - 1;
       if (prev_index <= 10) {
@@ -105,8 +105,8 @@ const Challenges = () => {
 
   // Smart default style - uses medium values to minimize transitions
   const defaultCardStyle = {
-    width: '210px',        
-    height: '290px',      
+    width: '210px',
+    height: '290px',
     className: "bg-[#0A2540] shadow-md z-15", // Medium styling
     percentageClass: "text-white text-[60px]", // Medium text size (between 48px and 80px)
     descriptionClass: "text-gray-400 text-sm"  // Medium gray
@@ -154,21 +154,21 @@ const Challenges = () => {
   };
 
   return (
-    <div 
-      className="flex flex-col  justify-center px-4 sm:px-6 lg:px-20 mx-auto min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6" 
-      style={{ 
-        backgroundImage: "url('/images/challenge-bg.png')", 
-        backgroundRepeat: 'no-repeat', 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center' 
+    <div
+      className="flex flex-col  justify-center px-4 sm:px-6 lg:px-20 mx-auto min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6"
+      style={{
+        backgroundImage: "url('/images/challenge-bg.png')",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }}
     >
       <div className="mb-8">
-        <h2 className="text-[20px] font-bold text-secondary mb-4">
-          —<span className='mx-3'> CHALLENGES</span>—
+        <h2 className="text-[20px] font-bold text-secondary mb-4 text-center sm:text-start">
+          —<span className='mx-3 '> CHALLENGES</span>—
         </h2>
-        <h1 className='lg:text-[64px] text-3xl md:text-4xl  font-bold mb-4'>
-          BUSINESS BUILDING IS COMPLEX.<br /> 
+        <h1 className='lg:text-[64px] text-3xl md:text-4xl  font-bold mb-4 text-center sm:text-start'>
+          BUSINESS BUILDING IS COMPLEX.<br />
           SUCCESS SHOULDN'T BE.
         </h1>
       </div>
@@ -178,14 +178,14 @@ const Challenges = () => {
         {/* <div className="absolute top-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded">
           Current: {currentIndex} | Total: {infiniteStats.length}
         </div> */}
-        
+
         {/* Cards Container */}
         <div className="relative w-full h-full">
           {/* Render visible range around current index */}
           {infiniteStats.slice(Math.max(0, currentIndex - 4), currentIndex + 5).map((stat, localIndex) => {
             const actualIndex = Math.max(0, currentIndex - 4) + localIndex;
             const relativePosition = actualIndex - currentIndex;
-            
+
             // Always use final style - no transition delay
             const style = getFinalCardStyle(relativePosition);
 
@@ -214,7 +214,7 @@ const Challenges = () => {
         </div>
 
         {/* Navigation Buttons */}
-<div className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 flex px-10">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 flex px-10">
           <button
             onClick={prevSlide}
             className="cursor-pointer hover:bg-gray-100 transition-all p-2 rounded"

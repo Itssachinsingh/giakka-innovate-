@@ -65,8 +65,8 @@ const Process = () => {
             {/* left side */}
             <div className='flex flex-col justify-between w-[100%] md:w-[40%]'>
                 <div>
-                    <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>PROCESS</span>—</h2>
-                    <h1 className='lg:text-[64px] text-2xl sm:text-4xl md:text-5xl  mt-5 md:mt-2 font-bold mb-4'>SEE OUR STRATEGIC PROCESS</h1>
+                    <h2 className="text-[20px] font-bold text-secondary text-center sm:text-start">—<span className='mx-3'>PROCESS</span>—</h2>
+                    <h1 className='lg:text-[64px] text-2xl sm:text-4xl md:text-5xl  mt-5 md:mt-2 font-bold mb-4 text-center sm:text-start'>SEE OUR STRATEGIC PROCESS</h1>
                 </div>
                 <div className='text-gray-400'>
                     <p className='text-[20px]'>From Insight to Impact</p>
@@ -116,8 +116,8 @@ const Process = () => {
                                 className="object-cover "
                             />
                         </div>
-                        <h3 className="text-[32px] font-bold mb-2 mt-10">{activePhase?.title}</h3>
-                        <p className="text-[#000]/54 text-[20px] leading-relaxed">
+                        <h3 className="sm:text-[32px] text-[22px] font-bold mb-2 mt-10">{activePhase?.title}</h3>
+                        <p className="text-[#000]/54 text-[15px] sm:text-[20px] leading-relaxed">
                             {activePhase?.description}
                         </p>
                     </div>

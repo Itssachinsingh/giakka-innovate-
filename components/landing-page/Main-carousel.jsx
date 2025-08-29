@@ -8,20 +8,20 @@ const MainCarousel = () => {
     {
       id: 1,
       title: "Research complete. Now what? Transform your funded innovation into market success.",
-      backgroundImage: "/images/slider1.png",
-      slideImage: "/images/slider1.png"
+      backgroundImage: "/images/slider1.jpg",
+      slideImage: "/images/slider1.jpg"
     },
     {
       id: 2,
       title: "Ready to expand globally? Turn market uncertainty into your competitive advantage.",
-      backgroundImage: "/images/slider2.png",
-      slideImage: "/images/slider2.png"
+      backgroundImage: "/images/slider2.jpg",
+      slideImage: "/images/slider2.jpg"
     },
     {
       id: 3,
       title: "Policy changes everything. Navigate complexity with expert guidance",
-      backgroundImage: "/images/slider3.png",
-      slideImage: "/images/slider3.png"
+      backgroundImage: "/images/slider3.jpg",
+      slideImage: "/images/slider3.jpg"
     }
   ];
 

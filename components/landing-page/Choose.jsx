@@ -55,8 +55,8 @@ const faqs = [
 const Choose = () => {
     return (
         <div className="px-4 sm:px-6 lg:px-20 mx-auto">
-            <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>WHY CHOOSE US</span>—</h2>
-            <h1 className='lg:text-[64px] text-3xl sm:text-4xl md:text-5xl  font-bold mb-4'>WHERE STRATEGIC VISION MEEETS<br /> PROVEN EXECUTION</h1>
+            <h2 className="text-[20px] font-bold text-secondary text-center sm:text-start">—<span className='mx-3'>WHY CHOOSE US</span>—</h2>
+            <h1 className='lg:text-[64px] text-3xl sm:text-4xl md:text-5xl  font-bold mb-4 text-center sm:text-start mt-10 sm:mt-3'>WHERE STRATEGIC VISION MEEETS<br /> PROVEN EXECUTION</h1>
             <section className="py-16" data-aos="fade-up" id='faq'>
                 <div className="mx-auto  flex flex-col md:flex-row justify-between gap-10 md:gap-0 items-start">
                     <div className=' w-[100%] md:w-[45%]  h-[550px] overflow-hidden relative'>
