@@ -14,7 +14,6 @@ import { CaseStudy } from "@/components/landing-page/CaseStudy";
 import Insights from "@/components/landing-page/Insights";
 import Book from "@/components/landing-page/Book";
 import Faq from "@/components/landing-page/Faq";
-import Footer from "@/components/landing-page/Footer";
 
 export default function Home() {
   return (
@@ -38,12 +37,12 @@ export default function Home() {
       <Challenges />
       <Experties />
       <HoverCard />
-      <Growth />
+      <Growth  bg='bg-[#000C17]' text='text-white' />
       <Choose/>
       <Process/>
       <CaseStudy/>
       <Insights/>
-      <Book/>
+      <Book bg='bg-[#000C17]' text='text-white'/>
       <Faq/>
  
     </main>

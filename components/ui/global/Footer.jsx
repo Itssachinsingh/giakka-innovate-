@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { CustomButton } from '../ui/global/custom-button';
-
+import { CustomButton } from './custom-button';
 const Footer = () => {
     return (
         <footer className="relative bg-[#0a101b] text-white px-6 sm:px-10 lg:px-20 pt-12 pb-8 overflow-hidden">
@@ -37,7 +36,7 @@ const Footer = () => {
 
             {/* Footer links - Full width spread */}
             <div className="relative z-10 mb-10">
-                <div className="flex flex-col sm:flex-row justify-between gap-8 lg:gap-20 ">
+                <div className="flex flex-col sm:flex-row justify-between gap-8 lg:gap-20 text-[16px] ">
                     
                     {/* Social Media & Contact */}
                     <div className='w-fit'>
@@ -48,23 +47,23 @@ const Footer = () => {
                             <div className="w-8 h-8 flex items-center justify-center bg-white text-black rounded">T</div>
                         </div>
 
-                        <h3 className="font-bold text-lg md:text-[32px] mb-2 leading-loose">Contact</h3>
-                        <p>+91 74899 76927</p>
-                        <p>info@gikaainnovate.com</p>
-                        <p>xyz, city, India</p>
+                        <h3 className="font-bold text-lg md:text-[32px] mb-2 ">Contact</h3>
+                        <p  className='text-[16px] leading-8 sm:leading-10'>+91 74899 76927</p>
+                        <p  className='text-[16px] leading-8 sm:leading-10'>info@gikaainnovate.com</p>
+                        <p  className='text-[16px] leading-8 sm:leading-10'>xyz, city, India</p>
                     </div>
 
                     {/* Services */}
                     <div className='w-fit'>
                         <h3 className="font-bold text-lg md:text-[32px] mb-4 leading-loose">Services</h3>
                         <ul className="space-y-2 text-sm leading-loose">
-                            <li>Market Entry & Growth</li>
-                            <li>Technology Commercialization & Transfer</li>
-                            <li>Joint Venture Investment Support</li>
-                            <li>Partnerships & Corporate Development</li>
-                            <li>Global Capability Centre Setup</li>
-                            <li>Innovation Financing</li>
-                            <li>Policy Advocacy & Government Relations</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Market Entry & Growth</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Technology Commercialization & Transfer</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Joint Venture Investment Support</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Partnerships & Corporate Development</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Global Capability Centre Setup</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Innovation Financing</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Policy Advocacy & Government Relations</li>
                         </ul>
                     </div>
 
@@ -72,14 +71,14 @@ const Footer = () => {
                     <div className='w-fit'>
                         <h3 className="font-bold text-lg md:text-[32px] mb-4 leading-loose">Stakeholders</h3>
                         <ul className="space-y-2 text-sm leading-loose">
-                            <li>Innovation Agencies</li>
-                            <li>Research Councils</li>
-                            <li>Universities</li>
-                            <li>Startups</li>
-                            <li>Investors</li>
-                            <li>Corporates</li>
-                            <li>Governments</li>
-                            <li>Trade Bodies</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Innovation Agencies</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Research Councils</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Universities</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Startups</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Investors</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Corporates</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Governments</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Trade Bodies</li>
                         </ul>
                     </div>
 
@@ -87,13 +86,13 @@ const Footer = () => {
                     <div className='w-fit'>
                         <h3 className="font-bold text-lg md:text-[32px] mb-4 leading-loose">Company</h3>
                         <ul className="space-y-2 text-sm leading-loose">
-                            <li>About us</li>
-                            <li>Insights</li>
-                            <li>Services</li>
-                            <li>Process</li>
-                            <li>Stakeholders</li>
-                            <li>Contact</li>
-                            <li>Career</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>About us</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Insights</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Services</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Process</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Stakeholders</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Contact</li>
+                            <li className='text-[16px] leading-8 sm:leading-10'>Career</li>
                         </ul>
                     </div>
                 </div>

@@ -9,10 +9,10 @@ const page = () => {
   return (
     <div>
         <Hero/>
-        <Book/>
+        <Book bg='bg-[#9BC8F5]' text='text-black'/>
         <Details/>
-        <Offices/>
-        <Apply/>
+        <Offices display='hidden'/>
+        <Apply text='If you’re ready to architect impact at scale, we’re ready for you.' btnText='APPLY NOW'/>
     </div>
   )
 }

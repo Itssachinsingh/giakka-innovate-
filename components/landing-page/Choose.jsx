@@ -62,9 +62,9 @@ const Choose = () => {
                     <div className=' w-[100%] md:w-[45%]  h-[550px] overflow-hidden relative'>
                         <Image
                             src='/images/choose-us.jpg'
-                            width={300}
-                            height={200}
+                            fill
                             className='w-full object-cover object-center'
+                            alt='choose-image'
                         />
                     </div>
                     <div

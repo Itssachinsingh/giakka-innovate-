@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/ui/global/Header";
-import Footer from "@/components/landing-page/Footer";
+import Footer from "@/components/ui/global/Footer";
 const satoshi = localFont({
   src: "../public/fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",

@@ -5383,32 +5383,4 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1022.49 447.509C1022.49 448.644 1021.57 449.566 1020.44 449.566C1019.3 449.566 1018.38 448.644 1018.38 447.509C1018.38 446.373 1019.3 445.451 1020.44 445.451C1021.57 445.451 1022.49 446.373 1022.49 447.509Z" fill="#2F2E38"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1016.32 453.681C1016.32 454.817 1015.4 455.739 1014.26 455.739C1013.12 455.739 1012.2 454.817 1012.2 453.681C1012.2 452.546 1013.12 451.624 1014.26 451.624C1015.4 451.624 1016.32 452.546 1016.32 453.681Z" fill="#2F2E38"/>
 </g>
-<g opacity="0.1">
-<rect x="176.82" y="227.738" width="40" height="40" rx="20" fill="#047AE0"/>
-</g>
-<g opacity="0.2">
-<rect x="184.82" y="235.738" width="24" height="24" rx="12" fill="#047AE0"/>
-</g>
-<rect x="192.82" y="243.738" width="8" height="8" rx="4" fill="#047AE0"/>
-<g opacity="0.1">
-<rect x="578.457" y="109.336" width="40" height="40" rx="20" fill="#047AE0"/>
-</g>
-<g opacity="0.2">
-<rect x="586.457" y="117.336" width="24" height="24" rx="12" fill="#047AE0"/>
-</g>
-<rect x="594.457" y="125.336" width="8" height="8" rx="4" fill="#047AE0"/>
-<g opacity="0.1">
-<rect x="752.172" y="249.869" width="40" height="40" rx="20" fill="#047AE0"/>
-</g>
-<g opacity="0.2">
-<rect x="760.172" y="257.869" width="24" height="24" rx="12" fill="#047AE0"/>
-</g>
-<rect x="768.172" y="265.869" width="8" height="8" rx="4" fill="#047AE0"/>
-<g opacity="0.1">
-<rect x="685" y="254" width="40" height="40" rx="20" fill="#047AE0"/>
-</g>
-<g opacity="0.2">
-<rect x="693" y="262" width="24" height="24" rx="12" fill="#047AE0"/>
-</g>
-<rect x="701" y="270" width="8" height="8" rx="4" fill="#047AE0"/>
 </svg>

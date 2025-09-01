@@ -31,6 +31,7 @@ const Insights = () => {
                         width={400}
                         height={350}
                         className='h-[500px] w-full'
+                        alt='blog'
                     />
                     <div>
                         <p className='my-4 text-[#000]/54 font-semibold'>JULY 4, 2025</p>
