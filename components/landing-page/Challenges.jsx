@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
+import MaxWidthWrapper from '../ui/global/max-width-wrapper';
 
 const Challenges = () => {
   const intervalRef = useRef(null);
@@ -105,10 +106,10 @@ const Challenges = () => {
 
   // Smart default style - uses medium values to minimize transitions
   const defaultCardStyle = {
-    width: '210px',
-    height: '290px',
+    width: '190px',
+    height: '250px',
     className: "bg-[#0A2540] shadow-md z-15", // Medium styling
-    percentageClass: "text-white text-[60px]", // Medium text size (between 48px and 80px)
+    percentageClass: "text-white text-[48px]", // Medium text size (between 48px and 80px)
     descriptionClass: "text-gray-400 text-sm"  // Medium gray
   };
 
@@ -116,14 +117,14 @@ const Challenges = () => {
     if (targetPosition < -2 || targetPosition > 2) {
       return {
         width: '190px',
-        height: '260px',
+        height: '290px',
         className: "opacity-0 scale-90 z-0",
         percentageClass: "text-white text-[60px]",
         descriptionClass: "text-white text-xs"
       };
     } else if (targetPosition === 0) {
       return {
-        width: '290px',
+        width: '270px',
         height: '390px',
         className: "bg-[#01172E] shadow-2xl z-30",
         percentageClass: "text-[#00EB66] text-[80px]",
@@ -163,6 +164,7 @@ const Challenges = () => {
         backgroundPosition: 'center'
       }}
     >
+      <MaxWidthWrapper>
       <div className="mb-8">
         <h2 className="text-[20px] font-bold text-secondary mb-4 text-center sm:text-start">
           —<span className='mx-3 '> CHALLENGES</span>—
@@ -198,7 +200,7 @@ const Challenges = () => {
                 style={{
                   width: style.width,
                   height: style.height,
-                  transform: `translateX(${relativePosition * 280}px) translateY(-50%) translateX(-50%)`,
+                  transform: `translateX(${relativePosition * 260}px) translateY(-50%) translateX(-50%)`,
                   backfaceVisibility: 'hidden',
                 }}
               >
@@ -214,7 +216,7 @@ const Challenges = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 flex px-10">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 flex ">
           <button
             onClick={prevSlide}
             className="cursor-pointer hover:bg-gray-100 transition-all p-2 rounded"
@@ -241,6 +243,8 @@ const Challenges = () => {
           </button>
         </div>
       </div>
+</MaxWidthWrapper>
+
     </div>
   );
 };

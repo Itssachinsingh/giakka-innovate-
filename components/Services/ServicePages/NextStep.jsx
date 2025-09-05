@@ -45,11 +45,11 @@ const Principle = () => {
                 </h1>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:justify-evenly justify-around px-4 gap-8 sm:gap-0 lg:px-20 mx-auto py-12">
+            <div className="flex flex-col sm:flex-row items-center sm:justify-end justify-around px-4 gap-8 sm:gap-10 mx-auto py-12">
                 {values.map((item) => (
                     <motion.div
                         key={item.id}
-                        className="relative cursor-pointer overflow-hidden h-[465px] w-full sm:w-[30%]  "
+                        className="relative cursor-pointer overflow-hidden h-[465px] w-full sm:w-[28%]  "
                         style={{ perspective: "1000px" }}
                         animate={{ rotateY: flips[item.id] || 0 }}
                         transition={{ duration: 1, ease: "easeInOut" }}

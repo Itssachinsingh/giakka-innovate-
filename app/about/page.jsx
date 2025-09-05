@@ -7,6 +7,7 @@ import Differences from '@/components/About/Differences'
 import Offices from '@/components/Contact/Offices'
 import Hero from '@/components/ui/global/Hero'
 import React from 'react'
+import Discover from '@/components/About/Discover'
 
 const page = () => {
   return (
@@ -16,7 +17,8 @@ const page = () => {
         <Impact/>
         <Commitment/>
         <Principle/>
-        <Apply text="Ready to discover what's possible when strategic vision meets proven execution?" btnText='Start Your Growth Journey'/>
+        {/* <Apply text="Ready to discover what's possible when strategic vision meets proven execution?" btnText='Start Your Growth Journey'/> */}
+        <Discover/>
       <Differences/>
       <Offices display='block'/>
    </div>

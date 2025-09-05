@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import { CustomButton } from '../ui/global/custom-button';
+import MaxWidthWrapper from '../ui/global/max-width-wrapper';
 
 const faqs = [
     {
@@ -58,7 +59,8 @@ const faqs = [
 
 const Faq = () => {
     return (
-        <div className="px-4 sm:px-6 lg:px-20 mx-auto my-20">
+        <MaxWidthWrapper>
+        <div className=" mx-auto my-20">
             <h2 className="text-[20px] font-bold text-secondary text-center md:text-start">—<span className='mx-3'>FREQUENTLY ASKED QUESTIONS</span>—</h2>
             <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center md:text-start w-[100%] mt-10 md:mt-3 md:w-[80%]'>ANY QUESTIONS BEFORE WE START?</h1>
             <div className='flex flex-col md:flex-row justify-between gap-20 my-20 items-stretch'  >
@@ -137,6 +139,7 @@ const Faq = () => {
                 </div>
             </div>
         </div>
+        </MaxWidthWrapper>
     )
 }
 

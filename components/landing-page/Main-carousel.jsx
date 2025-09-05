@@ -262,7 +262,7 @@ const MainCarousel = () => {
                                  typeof window !== 'undefined' && window.innerWidth < 1024 ? '280px' : '350px'
                         }}
                       >
-                        <div className="flex items-center justify-end h-full">
+                        <div className="flex items-center justify-end h-full ">
                           <div className="relative mr-0">
                             <div
                               className={`${slideStyle.width} ${slideStyle.height} ${slideStyle.className} 

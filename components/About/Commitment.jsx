@@ -3,17 +3,17 @@ import Image from "next/image";
 
 const Commitment = () => {
   return (
-    <div className="relative w-full min-h-[90vh]">
+    <div className="relative w-full min-h-[70vh] bg-blue-100">
       {/* Background image full section */}
       <Image
         src="/images/contact-bg.jpg"
         alt="Background"
         fill
-        className="object-cover object-center opacity-[3%]"
+        className="object-cover object-center opacity-[3%] "
       />
 
       {/* Content Grid */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-full">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-full ">
         {/* Left Side Text */}
         <div className="p-6 sm:p-12 lg:p-20 flex flex-col justify-center">
           <h1 className="lg:text-[84px] text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
@@ -41,6 +41,7 @@ const Commitment = () => {
           />
         </div>
       </div>
+      
     </div>
   );
 };

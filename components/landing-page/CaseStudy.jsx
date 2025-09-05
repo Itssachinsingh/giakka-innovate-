@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { CustomButton } from "../ui/global/custom-button";
+import MaxWidthWrapper from "../ui/global/max-width-wrapper";
 
 const slides = [
     {
@@ -25,9 +26,12 @@ const slides = [
 
 export const CaseStudy = () => {
     return (
-        <div className="relative my-20 ">
+       
+        <div className="relative my-20 bg-[#DBEDFF]">
+             <MaxWidthWrapper>
             {/* Main heading section */}
-            <section className=" h-250 md:h-screen sticky top-10 flex items-center justify-center bg-[#DBEDFF] z-10 px-4 sm:px-6 lg:px-20">
+            <section className=" h-250 md:h-screen sticky top-10 flex items-center justify-center  z-10 ">
+
                 <div className="text-center">
                     <h2 className="text-[20px] font-bold text-secondary">
                         —<span className="mx-3">CASE STUDIES</span>—
@@ -36,11 +40,12 @@ export const CaseStudy = () => {
                         HOW WE TRANSFORM <br /> CHALLENGES INTO SUCCESS
                     </h1>
                 </div>
+                
             </section>
             {slides.map((slide, idx) => (
                 <section
                     key={idx}
-                    className="h-250 md:h-screen sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-20 mx-auto"
+                    className="h-250 md:h-screen sticky top-0 flex items-center justify-center mx-auto"
                     style={{ zIndex: 20 + idx }}
                 >
                     <div className="w-[100%]  shadow-[0_0_25px_0_#69ACF0] flex flex-col sm:flex-row px-6  py-14 md:p-14  gap-10 bg-white ">
@@ -77,6 +82,8 @@ export const CaseStudy = () => {
                     )}
                 </section>
             ))}
+        </MaxWidthWrapper>
         </div>
+
     );
 };

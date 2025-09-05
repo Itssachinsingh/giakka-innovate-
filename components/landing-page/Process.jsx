@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { CustomButton } from '../ui/global/custom-button';
 import Image from 'next/image';
+import MaxWidthWrapper from '../ui/global/max-width-wrapper';
 
 const Process = () => {
     const phases = [
@@ -61,12 +62,13 @@ const Process = () => {
     const activePhase = phases.find((phase) => phase.id === active);
 
     return (
-        <div className="px-4 sm:px-6 lg:px-20 mx-auto flex flex-col md:flex-row justify-between my-10">
+        <MaxWidthWrapper>
+        <div className="mx-auto flex flex-col md:flex-row justify-between my-10">
             {/* left side */}
             <div className='flex flex-col justify-between w-[100%] md:w-[40%]'>
                 <div>
                     <h2 className="text-[20px] font-bold text-secondary text-center sm:text-start">—<span className='mx-3'>PROCESS</span>—</h2>
-                    <h1 className='lg:text-[64px] text-2xl sm:text-4xl md:text-5xl  mt-5 md:mt-2 font-bold mb-4 text-center sm:text-start'>SEE OUR STRATEGIC PROCESS</h1>
+                    <h1 className='lg:text-[64px] text-2xl sm:text-4xl md:text-5xl  mt-5 md:mt-2 font-bold mb-4 text-center sm:text-start leading-5 md:leading-20'>SEE OUR STRATEGIC PROCESS</h1>
                 </div>
                 <div className='text-gray-400'>
                     <p className='text-[20px]'>From Insight to Impact</p>
@@ -126,6 +128,7 @@ const Process = () => {
 
             </div>
         </div>
+        </MaxWidthWrapper>
     )
 }
 

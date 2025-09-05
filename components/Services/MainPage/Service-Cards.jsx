@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { CustomButton } from '@/components/ui/global/custom-button'
+import MaxWidthWrapper from "@/components/ui/global/max-width-wrapper";
 
 const slides = [
   {
@@ -52,9 +53,11 @@ const slides = [
 
  const Service_Cards = () => {
     return (
-        <div className="relative my-20 ">
+      
+        <div className="relative my-20 bg-[#DBEDFF]">
+              <MaxWidthWrapper>
             {/* Main heading section */}
-            <section className=" h-250 md:h-screen sticky top-10 flex items-center justify-center bg-[#DBEDFF] z-10 px-4 sm:px-6 lg:px-20">
+            <section className=" h-250 md:h-screen sticky top-10 flex items-center justify-center  z-10">
                 <div className="text-center">
                     <h2 className="text-[20px] font-bold text-secondary">
                         —<span className="mx-3">OUR SERVICES</span>—
@@ -67,7 +70,7 @@ const slides = [
             {slides.map((slide, idx) => (
                 <section
                     key={idx}
-                    className="h-250 md:h-screen sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-20 mx-auto"
+                    className="h-250 md:h-screen sticky top-0 flex items-center justify-center mx-auto"
                     style={{ zIndex: 20 + idx }}
                 >
                     <div className="w-[100%] h-full md:h-[650px] shadow-[0_0_25px_0_#69ACF0] flex flex-col sm:flex-row   gap-10 bg-white ">
@@ -93,12 +96,13 @@ const slides = [
                                 width={500}
                                 height={500}
                                 alt={slide.title}
-                                className="w-full h-[240px] sm:h-full object-cover object-center"
+                                className="w-full h-[240px]  sm:h-full object-cover object-center"
                             />
                         </div>
                     </div>
                 </section>
             ))}
+            </MaxWidthWrapper>
         </div>
     );
 };

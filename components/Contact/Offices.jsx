@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import MaxWidthWrapper from "../ui/global/max-width-wrapper";
 
 const offices = [
   {
@@ -30,7 +31,8 @@ const offices = [
 
 const Offices = ({display}) => {
   return (
-    <div className="my-20 px-4 sm:px-6 lg:px-20">
+    <MaxWidthWrapper>
+    <div className="my-20 px-4 ">
       <h2 className="lg:text-[64px] text-2xl sm:text-3xl md:text-4xl font-bold text-center">
         OUR OFFICES
       </h2>
@@ -108,6 +110,7 @@ const Offices = ({display}) => {
       </div>
 
     </div>
+    </MaxWidthWrapper>
   );
 };
 
