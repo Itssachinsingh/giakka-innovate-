@@ -1,14 +1,14 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
-import { CustomButton } from "../ui/global/custom-button";
-import MaxWidthWrapper from "../ui/global/max-width-wrapper";
+import { CustomButton } from "../global/custom-button";
+import MaxWidthWrapper from "../global/max-width-wrapper";
 const services = [
     {
         id: 1,
         title: "Market Entry & Growth",
         description: "Bridge the gap between breakthrough research and sustainable revenue, specializing in post-grant commercialization for Innovate UK recipients and research institutions.",
-        icon: "/images/icon.svg"
+        icon: "/images/market.svg"
     },
     {
         id: 2,
@@ -20,31 +20,31 @@ const services = [
         id: 3,
         title: "Joint Venture Investment Support",
         description: "Bridge the gap between breakthrough research and sustainable revenue, specializing in post-grant commercialization for Innovate UK recipients and research institutions.",
-        icon: "/images/icon.svg"
+        icon: "/images/joint.svg"
     },
     {
         id: 4,
         title: "Partnerships & Corporate Development",
         description: "Bridge the gap between breakthrough research and sustainable revenue, specializing in post-grant commercialization for Innovate UK recipients and research institutions.",
-        icon: "/images/icon.svg"
+        icon: "/images/corporate.svg"
     },
     {
         id: 5,
         title: "Global Capability Centre Setup",
         description: "Bridge the gap between breakthrough research and sustainable revenue, specializing in post-grant commercialization for Innovate UK recipients and research institutions.",
-        icon: "/images/icon.svg"
+        icon: "/images/globe.svg"
     },
     {
         id: 6,
         title: "Innovation Financing",
         description: "Bridge the gap between breakthrough research and sustainable revenue, specializing in post-grant commercialization for Innovate UK recipients and research institutions.",
-        icon: "/images/icon.svg"
+        icon: "/images/innovation.svg"
     },
     {
         id: 7,
         title: "Policy Advocacy & Government Relations",
         description: "Bridge the gap between breakthrough research and sustainable revenue, specializing in post-grant commercialization for Innovate UK recipients and research institutions.",
-        icon: "/images/icon.svg"
+        icon: "/images/poilicy.svg"
     }
 ];
 
@@ -56,7 +56,7 @@ export default function ExpandingCard() {
             <div className="my-30">
                 <div className="text-center">
                     <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>OUR EXPERTIES </span>—</h2>
-                    <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl mt-5 sm:mt-3 font-bold mb-10'>SOLUTIOS FOR EVERY STAGE</h1>
+                    <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl mt-5 sm:mt-3 font-bold mb-10 '>SOLUTIOS FOR EVERY STAGE</h1>
                 </div>
                 <div className="mx-auto flex flex-wrap justify-evenly gap-4">
 

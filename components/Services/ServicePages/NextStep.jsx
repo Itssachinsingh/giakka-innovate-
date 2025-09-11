@@ -1,33 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import MaxWidthWrapper from "@/components/ui/global/max-width-wrapper";
+import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 
-const values = [
-    {
-        id: 1,
-        no: "01",
-        title: "Global Market Assessment",
-        desc: "Comprehensive analysis of your international opportunity and optimal expansion strategy",
-        img: "/images/step1.jpg",
-    },
-    {
-        id: 2,
-        no: "02",
-        title: "Strategic Market Entry Plan",
-        desc: "Detailed roadmap with clear timelines, milestones, and success metrics",
-        img: "/images/step2.jpg",
-    },
-    {
-        id: 3,
-        no: "03",
-        title: "Implementation Partnership",
-        desc: "Expert execution with continuous optimization and local market support",
-        img: "/images/step3.jpg",
-    },
-];
-
-const Principle = () => {
+const Principle = ({data}) => {
     const [flips, setFlips] = useState({}); // store rotation per card
 
     const handleFlip = (id) => {
@@ -46,7 +22,7 @@ const Principle = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center sm:justify-end justify-around px-4 gap-8 sm:gap-10 mx-auto py-12">
-                {values.map((item) => (
+                {data.map((item) => (
                     <motion.div
                         key={item.id}
                         className="relative cursor-pointer overflow-hidden h-[465px] w-full sm:w-[28%]  "

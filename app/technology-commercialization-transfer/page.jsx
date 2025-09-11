@@ -1,7 +1,7 @@
 import Opportunity from '@/components/Services/ServicePages/Opportunity'
-import Intro from '@/components/ui/global/Intro'
-import Path from '@/components/ui/global/Path'
-import ServicesHero from '@/components/ui/global/SerivecesHero'
+import Intro from '@/components/global/Intro'
+import Path from '@/components/global/Path'
+import ServicesHero from '@/components/global/SerivecesHero'
 import Solution from '@/components/Services/ServicePages/Solution'
 import Growth from '@/components/Services/MainPage/Growth'
 
@@ -14,34 +14,6 @@ import Book from '@/components/Services/MainPage/Book'
 const page = () => {
 
     // Opportunity Component
-    // const opportunityData = {
-    //     heading: {
-    //         sub: "OPPORTUNITY",
-    //         title: "THE GLOBAL EXPANSION OPPORTUNITY",
-    //     },
-    //     topStats: [
-    //         { number: "25%", desc: "annually growing, Cross-border e-commerce reaching $4.9 trillion by 2025" },
-    //         { number: "4.8B", desc: "global consumers outside your home market with rising purchasing power" },
-    //         { number: "$127T", desc: "global economy with emerging markets growing 2x faster than developed economies" },
-    //     ],
-    //     bottomStats: [
-    //         {
-    //             icon: "/images/incentives.svg",
-    //             highlight: "Government incentives",
-    //             desc: "totaling hundreds of billions globally for foreign investment",
-    //         },
-    //         {
-    //             icon: "/images/digital.svg",
-    //             highlight: "Digital transformation",
-    //             desc: "enabling unprecedented market access and customer engagement",
-    //         },
-    //         {
-    //             highlight: "Yet 70% of international expansion initiatives fail due to inadequate planning and execution.",
-    //             desc: "Success requires more than ambition—it demands systematic strategy, local expertise, and integrated execution across every aspect of market development.",
-    //         },
-    //     ],
-    // };
-
     const innovationCommercializationData = {
         heading: {
             sub: "TECHNOLOGY COMMERCIALIZATION",
@@ -312,8 +284,8 @@ const page = () => {
     // Choose Component
     const chooseUsData = {
         heading: {
-            main: "WHY CHOOSE US",
-            sub: "COMMERCIALIZING TECHNOLOGY",
+            main: "WHY CHOOSE US COMMERCIALIZING",
+            sub: " TECHNOLOGY",
             aeroImage: "/images/aero3.svg",
         },
         leftItems: [
@@ -409,6 +381,30 @@ const successData = {
 };
 
 
+// Next step  data
+const values = [
+    {
+        id: 1,
+        no: "01",
+        title: "Technology Assessment",
+        desc: "Comprehensive evaluation of your commercialization potential and optimal pathway",
+        img: "/images/step4.jpg",
+    },
+    {
+        id: 2,
+        no: "02",
+        title: "Commercialization Strategy",
+        desc: "Detailed roadmap with market validation, development milestones, and launch planning",
+        img: "/images/step5.jpg",
+    },
+    {
+        id: 3,
+        no: "03",
+        title: "Implementation Partnership",
+        desc: "Expert execution with continuous optimization and local market support",
+        img: "/images/step3.jpg",
+    },
+];
 
 
     return (
@@ -416,12 +412,12 @@ const successData = {
             <ServicesHero img='/images/market.png' heading='TECHNOLOGY COMMERCIALIZATION & TRANSFER' para='Transform Innovation into Market-Leading Revenue Streams' />
             <Path page='Technology Commercialization & Transfer' />
             <Intro para1='Bridge the gap between breakthrough research and commercial success. ' para2='From technology assessment to market launch, we provide the specialized expertise to monetize your innovations and establish sustainable competitive advantages globally.' />
-            <Opportunity data={opportunityData} />
+            <Opportunity data={innovationCommercializationData} />
             <Solution data={solutionsData} />
             <ChooseUS data={chooseUsData} />
             <Success data={successData} />
             <Growth />
-            <NextStep />
+            <NextStep  data={values}/>
             <Book />
         </div>
     )

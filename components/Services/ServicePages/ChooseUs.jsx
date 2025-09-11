@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { Globe, Puzzle, FileCheck2, Share2, Zap } from "lucide-react";
-import MaxWidthWrapper from "@/components/ui/global/max-width-wrapper";
+import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 
 const iconMap = { Globe, Puzzle, FileCheck2, Share2, Zap };
 

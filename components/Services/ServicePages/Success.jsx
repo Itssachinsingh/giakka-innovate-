@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import MaxWidthWrapper from "@/components/ui/global/max-width-wrapper";
+import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 
 const Success = ({ data }) => {
   return (

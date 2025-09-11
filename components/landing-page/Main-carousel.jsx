@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Image from "next/image";
-import { CustomButton } from "../ui/global/custom-button";
+import { CustomButton } from "../global/custom-button";
 
 const MainCarousel = () => {
   const slides = [

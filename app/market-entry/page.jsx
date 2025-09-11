@@ -1,7 +1,7 @@
 import Opportunity from '@/components/Services/ServicePages/Opportunity'
-import Intro from '@/components/ui/global/Intro'
-import Path from '@/components/ui/global/Path'
-import ServicesHero from '@/components/ui/global/SerivecesHero'
+import Intro from '@/components/global/Intro'
+import Path from '@/components/global/Path'
+import ServicesHero from '@/components/global/SerivecesHero'
 import Solution from '@/components/Services/ServicePages/Solution'
 import Growth from '@/components/Services/MainPage/Growth'
 
@@ -387,7 +387,30 @@ const opportunityData = {
   ],
 };
 
-
+// Next step  data
+const values = [
+    {
+        id: 1,
+        no: "01",
+        title: "Global Market Assessment",
+        desc: "Comprehensive analysis of your international opportunity and optimal expansion strategy",
+        img: "/images/step1.jpg",
+    },
+    {
+        id: 2,
+        no: "02",
+        title: "Strategic Market Entry Plan",
+        desc: "Detailed roadmap with clear timelines, milestones, and success metrics",
+        img: "/images/step2.jpg",
+    },
+    {
+        id: 3,
+        no: "03",
+        title: "Implementation Partnership",
+        desc: "Expert execution with continuous optimization and local market support",
+        img: "/images/step3.jpg",
+    },
+];
 
   return (
     <div>
@@ -399,7 +422,7 @@ const opportunityData = {
         <ChooseUS data={chooseUsData}/>
         <Success data={successData}/>
         <Growth/>
-        <NextStep/>
+        <NextStep data={values}/>
         <Book/>
     </div>
   )

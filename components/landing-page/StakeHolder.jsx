@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MaxWidthWrapper from "../ui/global/max-width-wrapper";
+import MaxWidthWrapper from "../global/max-width-wrapper";
 
 const stakeHolders = [
     { title: 'INNOVATION AGENCIES', img: '/images/stakeholder1.png' },
@@ -19,7 +19,7 @@ const HoverCard = () => {
         <MaxWidthWrapper>
         <div className="mx-auto">
             <h2 className="text-[20px] font-bold text-secondary text-center sm:text-start">—<span className='mx-3'>OUR STAKEHOLDERS</span>—</h2>
-            <h1 className='lg:text-[64px] text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center sm:text-start mt-5 sm:mt-3'>PARTNERING WITH LEADERS WHO <br /> SHAPE THE FUTURE OF INNOVATION </h1>
+            <h1 className='lg:text-[64px] text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center sm:text-start mt-5 sm:mt-3 leading-8 md:leading-20'>PARTNERING WITH LEADERS WHO <br /> SHAPE THE FUTURE OF INNOVATION </h1>
             <div className=" flex justify-center lg:justify-between items-center  flex-wrap gap-2 sm:gap-6 md:gap-10 lg:gap-5  my-20">
                 {stakeHolders.map((item, index) => (
                     <div className="relative w-[300px] h-[400px] overflow-hidden group mb-12" key={index}>

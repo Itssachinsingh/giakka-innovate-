@@ -1,7 +1,7 @@
-import AnimationContainer from "@/components/ui/global/animation-container";
-import Animationyx from "@/components/ui/global/animationyas";
-import { CustomButton } from "@/components/ui/global/custom-button";
-import Header from "@/components/ui/global/Header";
+import AnimationContainer from "@/components/global/animation-container";
+import Animationyx from "@/components/global/animationyas";
+import { CustomButton } from "@/components/global/custom-button";
+import Header from "@/components/global/Header";
 import MainCarousel from "../components/landing-page/Main-carousel";
 import BusinessVision from "../components/landing-page/BusinessVision";
 import Challenges from "../components/landing-page/Challenges";

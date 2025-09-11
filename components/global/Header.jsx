@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
+import { CustomButton } from './custom-button';
 // Header component from your existing navbar
 const Header = ({ bgColor, color, className }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,10 +51,10 @@ const Header = ({ bgColor, color, className }) => {
 
         {/* Desktop Button */}
         <div className="hidden lg:block">
-          <Link href='https://lu.ma/5qyjg5pl'>
-            <button className="bg-green-400 hover:bg-green-500 text-black text-[14px] lg:text-[16px] px-6 lg:px-8 py-2.5 lg:py-3 rounded font-semibold transition-colors">
-              BOOK A CALL
-            </button>
+          <Link href='#'>
+                <CustomButton href="#" variant="primary" target="_blank">
+                 BOOK A CALL
+                </CustomButton>
           </Link>
         </div>
 

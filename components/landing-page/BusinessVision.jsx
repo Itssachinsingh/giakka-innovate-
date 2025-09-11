@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { CustomButton } from "../ui/global/custom-button";
-import MaxWidthWrapper from "../ui/global/max-width-wrapper";
+import { CustomButton } from "../global/custom-button";
+import MaxWidthWrapper from "../global/max-width-wrapper";
 const BusinessVision = () => {
   return (
     <MaxWidthWrapper>

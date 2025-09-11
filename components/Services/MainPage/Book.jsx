@@ -1,6 +1,6 @@
 import React from 'react'
-import { CustomButton } from '@/components/ui/global/custom-button'
-import MaxWidthWrapper from "@/components/ui/global/max-width-wrapper";
+import { CustomButton } from '@/components/global/custom-button'
+import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 const Book = () => {
     return (
         <MaxWidthWrapper>

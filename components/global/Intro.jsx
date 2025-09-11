@@ -1,4 +1,4 @@
-import MaxWidthWrapper from '@/components/ui/global/max-width-wrapper'
+import MaxWidthWrapper from '@/components/global/max-width-wrapper'
 import React from 'react'
 
 const Intro = ({para1, para2}) => {

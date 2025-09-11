@@ -1,40 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import MaxWidthWrapper from "../ui/global/max-width-wrapper";
+import MaxWidthWrapper from "../global/max-width-wrapper";
 
-const values = [
-    {
-        id: 1,
-        title: "Customer Value",
-        desc: "We put our customers first, ensuring every product & service we offer is crafted to meet their needs and make their journey with us truly rewarding.",
-        img: "/images/principle1.jpg",
-    },
-    {
-        id: 2,
-        title: "Commitment",
-        desc: "We Stand by our word, delivering on promises with care and consistency, so our customers can always count on us.",
-        img: "/images/principle2.jpg",
-    },
-    {
-        id: 3,
-        title: "Unity",
-        desc: "Coming together as one Giakka family, working harmoniously with colleagues, customers, and partners to build lasting relationships founded on trust, mutual respect, and shared purpose.",
-        img: "/images/principle3.jpg",
-    },
-];
 
-const Principle = () => {
+
+const Principle = ({ data, titles }) => {
     const [active, setActive] = useState(1);
     return (
         <>
             <MaxWidthWrapper>
-                <div className="text-center mt-60 md:mt-40">
-                    <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>PRINCIPLES </span>—</h2>
-                    <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl mt-5 sm:mt-3 font-bold mb-10'>OUR FOUNDING PRINCIPLES</h1>
-                </div>
+                {titles.map((title, index) => (
+                    <div className="text-center mt-60 md:mt-40"   key={index}>
+                       <h2 className="text-[20px] font-bold text-secondary ">—<span className='mx-3'>{title.subheading}</span>—</h2>
+                        <h1 className='lg:text-[84px] text-3xl sm:text-4xl md:text-5xl mt-5 sm:mt-3 font-bold mb-10'>{title.heading}</h1>
+                    </div>
+                ))}
                 <div className="flex gap-4 mx-auto py-12">
-                    {values.map((item) => (
+                    {data.map((item) => (
                         <motion.div
                             key={item.id}
                             onClick={() => setActive(item.id)}

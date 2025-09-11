@@ -1,6 +1,6 @@
 import React from 'react'
-import { CustomButton } from '../ui/global/custom-button'
-import MaxWidthWrapper from '../ui/global/max-width-wrapper'
+import { CustomButton } from '../global/custom-button'
+import MaxWidthWrapper from '../global/max-width-wrapper'
 const Book = ({ bg, text }) => {
     return (
         <div className={`${bg}  h-auto px-4 sm:px-6 lg:px-20 mx-auto py-10 ${text} `}>

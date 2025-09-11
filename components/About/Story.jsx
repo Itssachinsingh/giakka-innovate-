@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import MaxWidthWrapper from '../ui/global/max-width-wrapper';
+import MaxWidthWrapper from '../global/max-width-wrapper';
 const faqs = [
     {
         question: "Integrated Approach",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomButton } from '@/components/ui/global/custom-button'
+import { CustomButton } from '@/components/global/custom-button'
 import Image from 'next/image'
 
 const Growth = () => {

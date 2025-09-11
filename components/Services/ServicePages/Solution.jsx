@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import MaxWidthWrapper from '@/components/ui/global/max-width-wrapper'
+import MaxWidthWrapper from '@/components/global/max-width-wrapper'
 import Image from 'next/image'
 
 const Solution = ({ data }) => {
