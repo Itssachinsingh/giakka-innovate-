@@ -1,10 +1,22 @@
 'use client'
 import React from "react";
 import Image from "next/image";
-import { Globe, Puzzle, FileCheck2, Share2, Zap } from "lucide-react";
+import {
+  Globe,
+  Puzzle,
+  FileCheck2,
+  Share2,
+  Zap,
+  Trophy,
+  Cpu,
+  Layers,
+  BarChart2,
+  Briefcase,
+} from "lucide-react";
 import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 
-const iconMap = { Globe, Puzzle, FileCheck2, Share2, Zap };
+// Every icon name used in a page's chooseUsData must be listed here
+const iconMap = { Globe, Puzzle, FileCheck2, Share2, Zap, Trophy, Cpu, Layers, BarChart2, Briefcase };
 
 const ChooseUS = ({ data }) => {
   const { heading, leftItems, rightItems, backgroundImage } = data;
