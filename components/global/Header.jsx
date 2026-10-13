@@ -51,11 +51,9 @@ const Header = ({ bgColor, color, className }) => {
 
         {/* Desktop Button */}
         <div className="hidden lg:block">
-          <Link href='#'>
-                <CustomButton href="#" variant="primary" target="_blank">
-                 BOOK A CALL
-                </CustomButton>
-          </Link>
+          <CustomButton href="#" variant="primary" target="_blank">
+            BOOK A CALL
+          </CustomButton>
         </div>
 
         {/* Mobile Hamburger / Close */}
